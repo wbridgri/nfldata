@@ -511,7 +511,9 @@ teamAndState(data)
 const confAndDiv = (conf, div) => {
     const result = data.filter(team => team.conference == conf)
     const results2 = result.filter(team => team.division == div)
-    console.log(results2)
+
+    let teams = results2.map(team => team.team)
+    console.log(teams) //coach's code
 }
 
 confAndDiv('nfc', 'south')
