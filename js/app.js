@@ -547,14 +547,18 @@ confAndDiv('nfc', 'south')
 
 const superBowl=()=> {
     let winners = []
+    let losers = []
     for(let i = 0; i < data.length; i++) {
         if(data[i].superBowlWins != 0) {
             winners = [...winners, data[i].team]
             
+        }else {
+            losers = [...losers, data[i].team]
         }
         
     }
     console.log(winners)
+    console.log(losers)
 }
 
 superBowl()
