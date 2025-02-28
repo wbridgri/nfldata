@@ -565,5 +565,139 @@ const superBowl=()=> {
 
 superBowl()
 
+/**
+ * 6. Make a card for each team and display it on the browser
+ * 
+ * The card should display: 
+ *      team
+ * location
+ * city
+ * state
+ * conference4
+ * division
+ * sb wins
+ * 
+ * when a card is clicked or hover, change display to notable players
+ */
+
+/**
+ * notable players in an object
+ */
+
+const cardRow = document.getElementById('cardRow')
+
+data.forEach(team => {
+    const col = document.createElement('div')
+    col.classList.add('col', 'gy-4')
+    col.innerHTML = 
+        `
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        ${team.team}
+                    </h5>
+                    <p class="card-text">
+                        ${team.location}
+                    </p>
+                    <p class="card-text">
+                        ${team.city}
+                    </p>
+                    <p class="card-text">
+                        ${team.state}
+                    </p>
+                    <p class="card-text">
+                        ${team.conference}
+                    </p>
+                    <p class="card-text">
+                        ${team.division}
+                    </p>
+                    <p class="card-text">
+                        superbowl wins: ${team.superBowlWins}
+                    </p>
+                    
+                </div>
+            </div>
+        `
+
+    cardRow.appendChild(col)
+    col.addEventListener('click', ()=>
+    {
+        col.innerHTML = 
+            `
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        ${team.team}'s Notable Players:
+                    </h5>
+                    <p class="card-text">
+                        Past: ${team.notablePlayers.past}
+                    </p>
+                    <p class="card-text">
+                        Present: ${team.notablePlayers.present}
+                    </p>
+                    
+                    
+                </div>
+            </div>
+
+            `
+    })
+    col.addEventListener('mouseover', ()=> {
+        col.innerHTML = 
+            `
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        ${team.team}'s Notable Players:
+                    </h5>
+                    <p class="card-text">
+                        Past: ${team.notablePlayers.past}
+                    </p>
+                    <p class="card-text">
+                        Present: ${team.notablePlayers.present}
+                    </p>
+                    
+                    
+                </div>
+            </div>
+            `
+    })
+    col.addEventListener('mouseout', ()=> {
+        col.innerHTML = 
+        `
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        ${team.team}
+                    </h5>
+                    <p class="card-text">
+                        ${team.location}
+                    </p>
+                    <p class="card-text">
+                        ${team.city}
+                    </p>
+                    <p class="card-text">
+                        ${team.state}
+                    </p>
+                    <p class="card-text">
+                        ${team.conference}
+                    </p>
+                    <p class="card-text">
+                        ${team.division}
+                    </p>
+                    <p class="card-text">
+                        superbowl wins: ${team.superBowlWins}
+                    </p>
+                    
+                </div>
+            </div>
+        `
+    })
+})
+
+
+
+
+
 
 
